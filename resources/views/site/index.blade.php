@@ -35,39 +35,51 @@
       <!-- /.row -->
 
       <div class="row">
-        <div class="col-sm-4 my-4">
+        <div class="col-sm-3 my-3">
           <div class="card">
             <img class="card-img-top" src="/img/img2.jpg" alt="">
             <div class="card-body">
               <h4 class="card-title">Venda de Peças</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="card-footer">
               <a href="{{ route('pagina', ['title' => 'catalogo']) }}" class="btn btn-primary">Confira o catálogo!</a>
             </div>
           </div>
         </div>
-        <div class="col-sm-4 my-4">
+        <div class="col-sm-3 my-3">
           <div class="card">
             <img class="card-img-top" src="/img/img1.jpg" alt="">
             <div class="card-body">
-              <h4 class="card-title">Transporte</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+              <h4 class="card-title">Fretamento, Turismo e Escolar</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="card-footer">
               <a href="{{ route('pagina', ['title' => 'transporte']) }}" class="btn btn-primary">Saiba mais!</a>
             </div>
           </div>
         </div>
-        <div class="col-sm-4 my-4">
+        <div class="col-sm-3 my-3">
           <div class="card">
             <img class="card-img-top" src="/img/img3.jpg" alt="">
             <div class="card-body">
               <h4 class="card-title">Reforma de ônibus</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+              <p class="card-text">Na sua reforma de ônibus você pode adquirir um ônibus reserva.</p>
             </div>
             <div class="card-footer">
               <a href="{{ route('pagina', ['title' => 'reforma']) }}" class="btn btn-primary">Saiba mais!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 my-3">
+          <div class="card">
+            <img class="card-img-top" src="/img/img3.jpg" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Compra/Venda de ônibus</h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{ route('pagina', ['title' => 'compra-venda']) }}" class="btn btn-primary">Saiba mais!</a>
             </div>
           </div>
         </div>
