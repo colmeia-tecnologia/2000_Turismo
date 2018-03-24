@@ -43,7 +43,7 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
             </div>
             <div class="card-footer">
-              <a href="{{ route('catalogo') }}" class="btn btn-primary">Confira o catálogo!</a>
+              <a href="{{ route('pagina', ['title' => 'catalogo']) }}" class="btn btn-primary">Confira o catálogo!</a>
             </div>
           </div>
         </div>

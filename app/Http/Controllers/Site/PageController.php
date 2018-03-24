@@ -9,6 +9,9 @@ class PageController extends Controller
 {
     public function index($title)
     {
+        if($title == 'catalogo')
+            return redirect()->route('catalogo');
+        
         return view('site.page.index');
     }
 }
