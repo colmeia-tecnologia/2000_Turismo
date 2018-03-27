@@ -29,6 +29,7 @@ Route::group([
     Route::resource('portfolios', 'PortfolioController');
     Route::resource('clients', 'ClientController');
     Route::resource('videos', 'VideoController');
+    Route::resource('pages', 'PageController');
     Route::resource('users', 'UserController');
     
     //Blog
@@ -50,16 +51,10 @@ Route::group([
     Route::post('/activate-inactivate', 'ActivateController@activateInactivate')->name('activate-inactivate');
 });
 
-Route::group([
-    'namespace' => 'Site',
-], function(){
-    Route::get('/', 'HomeController@index')->name('index');
-    Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('/empresa', 'BusinessController@index')->name('empresa');
-    Route::get('/catalogo', 'CatalogController@index')->name('catalogo');
-    Route::get('/contato', 'ContactController@index')->name('contato');
-    Route::post('/contato/envia', 'ContactController@send')->name('contato.send');
 
-    route::get('/pagina/{title}', 'PageController@index')->name('pagina');
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');

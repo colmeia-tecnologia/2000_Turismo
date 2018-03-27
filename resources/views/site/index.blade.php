@@ -73,7 +73,7 @@
         </div>
         <div class="col-sm-3 my-3">
           <div class="card">
-            <img class="card-img-top" src="/img/img3.jpg" alt="">
+            <img class="card-img-top" src="/img/img1.jpg" alt="">
             <div class="card-body">
               <h4 class="card-title">Compra/Venda de ônibus</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
