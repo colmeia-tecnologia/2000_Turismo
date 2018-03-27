@@ -13,7 +13,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('pagina', ['title' => 'empresa']) }}">A Empresa</a>
+          @php
+            $pageTitle = App\Http\Controllers\Util\UrlController::friendlyUrl('Quem somos nós');
+          @endphp
+          <a class="nav-link" href="{{ route('pagina', ['title' => $pageTitle]) }}">A Empresa</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('catalogo') }}">Catálogo de Produtos</a>

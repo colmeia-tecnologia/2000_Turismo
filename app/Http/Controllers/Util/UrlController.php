@@ -17,11 +17,12 @@ class UrlController extends Controller
     {
         $urlAmigavel    = $string;
         $urlAmigavel    = str_replace("\n",     '',     $urlAmigavel);
-        $urlAmigavel    = str_replace(',',      '',     $urlAmigavel);
+        //$urlAmigavel    = str_replace(',',      '',     $urlAmigavel);
         $urlAmigavel    = str_replace('-',      '',     $urlAmigavel);
         $urlAmigavel    = str_replace('.',      '-',    $urlAmigavel);
         $urlAmigavel    = str_replace(' ',      '-',    $urlAmigavel);
         $urlAmigavel    = str_replace('--',     '-',    $urlAmigavel);
+        $urlAmigavel    = str_replace('/',      '!',    $urlAmigavel);
         $urlAmigavel    = urlencode($urlAmigavel);
 
             //Tira caracteres Especiaiss
@@ -45,6 +46,7 @@ class UrlController extends Controller
     {
         $string = str_replace('-', ' ', $urlAmigavel);
         $string = str_replace('_', ' - ', $string);
+        $string = str_replace('!', '/', $string);
 
         return $string;
     }

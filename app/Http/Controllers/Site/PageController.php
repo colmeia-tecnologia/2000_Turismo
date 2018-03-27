@@ -2,16 +2,29 @@
 
 namespace App\Http\Controllers\Site;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Util\UrlController;
+use App\Repositories\PageRepository;
+use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    private $repository;
+
+    public function __construct(PageRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function index($title)
     {
-        if($title == 'catalogo')
+        $title = UrlController::translateFriendlyUrl($title);
+
+        if($title == 'Venda de Peças')
             return redirect()->route('catalogo');
-        
-        return view('site.page.index');
+
+        $page = $this->repository->findWhere(['title' => $title])->first();
+
+        return view('site.page.index', compact('page'));
     }
 }
