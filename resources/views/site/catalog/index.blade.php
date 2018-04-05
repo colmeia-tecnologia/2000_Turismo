@@ -20,62 +20,24 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Roda</td>
-                <td>3</td>
-                <td>R$ 75,00</td>
-                <td>Cat. Roda</td>
-                <td>Sub.Cat. Pirelli</td>
-              </tr>
-              <tr>
-                <td>Freio</td>
-                <td>3</td>
-                <td>R$ 75,00</td>
-                <td>Cat. Roda</td>
-                <td>Sub.Cat. Pirelli</td>
-              </tr>
-              <tr>
-                <td>Motor</td>
-                <td>3</td>
-                <td>R$ 75,00</td>
-                <td>Cat. Roda</td>
-                <td>Sub.Cat. Pirelli</td>
-              </tr>
-              <tr>
-                <td>Espelhos</td>
-                <td>3</td>
-                <td>R$ 75,00</td>
-                <td>Cat. Roda</td>
-                <td>Sub.Cat. Pirelli</td>
-              </tr>
-              <tr>
-                <td>Embreagem</td>
-                <td>3</td>
-                <td>R$ 75,00</td>
-                <td>Cat. Roda</td>
-                <td>Sub.Cat. Pirelli</td>
-              </tr>
-              <tr>
-                <td>Outro equipamento</td>
-                <td>3</td>
-                <td>R$ 75,00</td>
-                <td>Cat. Roda</td>
-                <td>Sub.Cat. Pirelli</td>
-              </tr>
-              <tr>
-                <td>Bancos</td>
-                <td>3</td>
-                <td>R$ 75,00</td>
-                <td>Cat. Roda</td>
-                <td>Sub.Cat. Pirelli</td>
-              </tr>
-              <tr>
-                <td>Câmbio</td>
-                <td>3</td>
-                <td>R$ 75,00</td>
-                <td>Cat. Roda</td>
-                <td>Sub.Cat. Pirelli</td>
-              </tr>
+              @foreach ($products as $product)
+                <tr>
+                  <td>{{$product->name}}</td>
+                  <td>{{$product->quantity}}</td>
+                  <td>R$ {{number_format($product->price, 2, ',', '.')}}</td>
+                  <td>
+                    @if(isset($product->category->title))
+                      {{$product->category->title}}
+                    @endif
+                  </td>
+                  <td>
+                    @if(isset($product->subcategory->title))
+                      {{$product->subcategory->title}}
+                    @endif
+                  </td>
+                </tr>
+              @endforeach
+              
             </tbody>
           </table>
         </div>
@@ -84,10 +46,8 @@
 
     </div>
 
-
   </div>
 @endsection
-
 
 @section('scripts')
     {!! Html::script('/js/site/jsCatalog.min.js') !!}
