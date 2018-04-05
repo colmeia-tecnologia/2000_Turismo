@@ -65,7 +65,7 @@ Route::group([
     Route::get('/empresa', 'BusinessController@index')->name('empresa');
     Route::get('/catalogo', 'CatalogController@index')->name('catalogo');
     Route::get('/contato', 'ContactController@index')->name('contato');
-    Route::post('/contato/envia', 'ContactController@send')->name('contato.send');
+    Route::post('/contato/enviar', 'ContactController@send')->name('contato.send');
  
     route::get('/pagina/{title}', 'PageController@index')->name('pagina');
 });
