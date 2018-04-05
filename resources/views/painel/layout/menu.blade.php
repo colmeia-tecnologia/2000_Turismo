@@ -55,6 +55,14 @@
             </a>
         </li>
     @endcan
+    {{--PRODUCT SUBCATEGORY--}}
+    @can('view-product-subcategories')
+        <li>
+            <a href='{{route('product_subcategories.index')}}' alt='Subcategoria de Produtos' title='Subcategoria de Produtos'>
+                <i class="fa fa-list" aria-hidden="true"></i> Subcategoria de Produtos
+            </a>
+        </li>
+    @endcan
     {{--Users--}}
     @can('view-users')
         <li>
