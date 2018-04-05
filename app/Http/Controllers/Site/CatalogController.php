@@ -2,13 +2,26 @@
 
 namespace App\Http\Controllers\Site;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\ProductRepository;
+use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
+    private $repository; 
+
+    public function __construct(ProductRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function index()
     {
-        return view('site.catalog.index');
+        $products = $this->repository
+                        ->orderBy('name')
+                        ->findWhere([['quantity', '>', '0']])
+                        ->all();
+
+        return view('site.catalog.index', compact('products'));
     }
 }
