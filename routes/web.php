@@ -29,6 +29,11 @@ Route::group([
     Route::resource('portfolios', 'PortfolioController');
     Route::resource('clients', 'ClientController');
     Route::resource('videos', 'VideoController');
+    Route::resource('pages', 'PageController');
+    Route::resource('product_categories', 'ProductCategoryController');
+    Route::get('product_categories/getSubcategoriesCombo/{id}', 'ProductCategoryController@getSubcategoriesCombo')->name('products.getSubcategoriesCombo');
+    Route::resource('product_subcategories', 'ProductSubcategoryController');
+    Route::resource('products', 'ProductController');
     Route::resource('users', 'UserController');
     
     //Blog
@@ -43,6 +48,7 @@ Route::group([
 
     //Upload
     Route::get('upload', 'UploadController@index');
+    Route::get('/upload/tinymce', 'UploadController@index');
     Route::post('upload/upload', 'UploadController@upload')->name('upload.upload');
     Route::get('upload/delete/{file}', 'UploadController@delete')->name('upload.delete');
 
@@ -50,10 +56,17 @@ Route::group([
     Route::post('/activate-inactivate', 'ActivateController@activateInactivate')->name('activate-inactivate');
 });
 
+Route::group([
+    'namespace' => 'Site',
+], function(){
+    Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-
-Route::get('/', function () {
-    return view('welcome');
+    Route::get('/empresa', 'BusinessController@index')->name('empresa');
+    Route::get('/catalogo', 'CatalogController@index')->name('catalogo');
+    Route::get('/contato', 'ContactController@index')->name('contato');
+    Route::post('/contato/envia', 'ContactController@send')->name('contato.send');
+ 
+    route::get('/pagina/{title}', 'PageController@index')->name('pagina');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');

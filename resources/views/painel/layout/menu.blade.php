@@ -1,4 +1,12 @@
 <ul>
+    {{--PÁGINAS--}}
+    @can('view-pages')
+        <li>
+            <a href='{{route('pages.index')}}' alt='Páginas' title='Páginas'>
+                <i class="fa fa-file-text" aria-hidden="true"></i> Páginas
+            </a>
+        </li>
+    @endcan
     {{--BANNERS--}}
     @can('view-banners')
         <li>
@@ -36,6 +44,30 @@
         <li>
             <a href='{{route('videos.index')}}' alt='Videos' title='Videos'>
                 <i class="fa fa-video-camera" aria-hidden="true"></i> Videos
+            </a>
+        </li>
+    @endcan
+    {{--PRODUCT CATEGORY--}}
+    @can('view-product-categories')
+        <li>
+            <a href='{{route('product_categories.index')}}' alt='Categorias de Produtos' title='Categorias de Produtos'>
+                <i class="fa fa-list" aria-hidden="true"></i> Categorias de Produtos
+            </a>
+        </li>
+    @endcan
+    {{--PRODUCT SUBCATEGORY--}}
+    @can('view-product-subcategories')
+        <li>
+            <a href='{{route('product_subcategories.index')}}' alt='Subcategoria de Produtos' title='Subcategoria de Produtos'>
+                <i class="fa fa-list" aria-hidden="true"></i> Subcategoria de Produtos
+            </a>
+        </li>
+    @endcan
+    {{--PRODUCT--}}
+    @can('view-products')
+        <li>
+            <a href='{{route('products.index')}}' alt='Produtos' title='Produtos'>
+                <i class="fa fa-tags" aria-hidden="true"></i> Produtos
             </a>
         </li>
     @endcan
