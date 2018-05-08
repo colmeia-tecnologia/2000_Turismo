@@ -34,6 +34,7 @@ Route::group([
     Route::get('product_categories/getSubcategoriesCombo/{id}', 'ProductCategoryController@getSubcategoriesCombo')->name('products.getSubcategoriesCombo');
     Route::resource('product_subcategories', 'ProductSubcategoryController');
     Route::resource('products', 'ProductController');
+    Route::resource('bus_sales', 'BusSaleController');
     Route::resource('users', 'UserController');
     
     //Blog
@@ -64,6 +65,7 @@ Route::group([
 
     Route::get('/empresa', 'BusinessController@index')->name('empresa');
     Route::get('/catalogo', 'CatalogController@index')->name('catalogo');
+    Route::get('/venda-onibus', 'BusSaleController@index')->name('venda-onibus');
     Route::get('/contato', 'ContactController@index')->name('contato');
     Route::post('/contato/enviar', 'ContactController@send')->name('contato.send');
  

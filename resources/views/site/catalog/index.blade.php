@@ -5,7 +5,7 @@
       <div class="col-sm-12">
         <h2 class="mt-4">Catálogo de produtos</h2>
 
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por..." title="Digite um item para buscar">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por fabricante..." title="Digite um item para buscar">
         <div class="tableoverflow">
           <table id="myTable">
             <thead>
