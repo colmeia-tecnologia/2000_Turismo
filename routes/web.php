@@ -65,6 +65,7 @@ Route::group([
 
     Route::get('/empresa', 'BusinessController@index')->name('empresa');
     Route::get('/catalogo', 'CatalogController@index')->name('catalogo');
+    Route::get('/venda-onibus', 'BusSaleController@index')->name('venda-onibus');
     Route::get('/contato', 'ContactController@index')->name('contato');
     Route::post('/contato/enviar', 'ContactController@send')->name('contato.send');
  
