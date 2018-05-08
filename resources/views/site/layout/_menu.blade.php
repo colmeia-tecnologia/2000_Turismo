@@ -22,6 +22,9 @@
           <a class="nav-link" href="{{ route('catalogo') }}">Catálogo de Produtos</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{{ route('venda-onibus') }}">Venda de Ônibus</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{{ route('contato') }}">Contato</a>
         </li>
       </ul>
