@@ -13,6 +13,7 @@
         <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="/css/site/business-frontpage.css" rel="stylesheet">
+        <link href="/css/site/custom.min.css" rel="stylesheet">
     </head>
     <body>
         @include('site.layout._menu')

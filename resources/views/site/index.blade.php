@@ -1,17 +1,54 @@
 @extends('site.layout.layout')
 
 @section('content')
-    <!-- Header with Background Image -->
-    <header class="business-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <h1 class="display-3 text-center text-white mt-4">{{ config('app.name', 'Laravel') }}</h1>
-          </div>
-        </div>
-      </div>
-    </header>
+    {{--Carousel--}}
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        {{--Indicator--}}
+        <ol class="carousel-indicators">
+            @php
+                for($i=0; $i<count($banners); $i++) {
+                    $active = '';
+                    
+                    if($i == 0)
+                        $active = 'active';
 
+                    echo "<li data-target='#carousel' data-slide-to='{$i}' class='{$active}'></li>";
+                }   
+            @endphp
+        </ol>
+
+        {{--Content--}}
+        <div class="carousel-inner">
+            @foreach ($banners as $banner)
+                @php
+                    $active = '';
+                    
+                    if($banner == $banners[0])
+                        $active = 'active';
+                @endphp
+
+                <div class="carousel-item {{$active}}">
+                    <img src="{{$banner->image}}" alt="{{$banner->description}}" title='{{$banner->title}}' class='img-fluid'>
+
+                    {{--<div class="container">
+                        <div class="carousel-caption">
+                            <h1>{{$banner->title}}</h1>
+                        </div>
+                    </div>--}}
+                </div>
+            @endforeach
+        </div>
+        
+        {{--Control--}}
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>
+    </div>
 
     <div class="row">
         <div class="col-sm-8">
@@ -19,9 +56,9 @@
           
             {!! $quemSomos->text !!}
 
-            <p>
+            {{--<p>
                 <a class="btn btn-primary btn-lg" href="{{ route('catalogo') }}">Ver catálogo de produtos &raquo;</a>
-            </p>
+            </p>--}}
         </div>
         <div class="col-sm-4">
             <h2 class="mt-4">Fale conosco</h2>
@@ -39,11 +76,11 @@
                 <br>
                 
                 <strong>E-mail:</strong>
-                <a href="mailto:#">email@milleniumdiesel.com</a>
+                <a href="mailto:#">2000turismo@2000turismo.com.br</a>
                 <br>
 
-                <strong>Midias Sociais:</strong>
-                <a href="mailto:#">Facebook.com.br/</a>
+                {{--<strong>Midias Sociais:</strong>
+                <a href="mailto:#">Facebook.com.br/</a>--}}
             </address>
         </div>
     </div>
@@ -77,4 +114,12 @@
         @endforeach
     </div>
     <!-- /.row -->
+@endsection
+
+@section('scripts')
+    <script>
+        $('.carousel').carousel({
+          interval: 5000
+        });
+    </script>
 @endsection
