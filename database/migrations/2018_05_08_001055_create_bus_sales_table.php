@@ -21,7 +21,8 @@ class CreateBusSalesTable extends Migration
             $table->string('bodyModel'); //Carroceria
             $table->integer('year');
             $table->integer('seatings');
-            $table->string('description');
+            $table->string('description')->nullable();
+            $table->boolean('active')->default('1');
             $table->timestamps();
             $table->softDeletes();
 		});

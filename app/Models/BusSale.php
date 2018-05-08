@@ -30,6 +30,7 @@ class BusSale extends Model implements Transformable
         'year',
         'seatings',
         'description',
+        'active',
     ];
     
     /*
@@ -44,6 +45,7 @@ class BusSale extends Model implements Transformable
         'year',
         'seatings',
         'description',
+        'active',
     ];
 
     /**

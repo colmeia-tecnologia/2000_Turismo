@@ -22,7 +22,7 @@ class PermissionsTableSeeder extends Seeder
                         'product_categories'    => 'categorias de produto',
                         'product_subcategories' => 'subcategorias de produto',
                         'products'              => 'produtos',
-                        'bus'                   => 'ônibus',
+                        'bus_sales'             => 'vendas de ônibus',
                         'users'                 => 'usuários',
                         'permissions'           => 'permissões',
                         //Blog

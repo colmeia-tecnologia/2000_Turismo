@@ -74,7 +74,7 @@
     {{--BUS--}}
     @can('view-bus')
         <li>
-            <a href='{{route('bus.index')}}' alt='Onibus' title='Onibus'>
+            <a href='{{route('bus_sales.index')}}' alt='Onibus' title='Onibus'>
                 <i class="fa fa-bus" aria-hidden="true"></i> Onibus
             </a>
         </li>
