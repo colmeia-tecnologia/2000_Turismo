@@ -39,4 +39,11 @@ class UploadController extends Controller
         
         return redirect()->back();
     }
+
+    public function manyImages(Request $request)
+    {
+        $images = $request->all()['images'];
+
+        return view('painel.upload.manyImages', compact('images'));
+    }
 }

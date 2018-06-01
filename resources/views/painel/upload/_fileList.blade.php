@@ -9,9 +9,13 @@
         </div>
         
         <div class='col-md-12 text-center margin-top-p'>
-            <a class='btn btn-default uploadSelectImage' data-name='{{asset($file)}}'>
-                Selecionar
-            </a>
+            @if(Route::current()->uri != 'upload/many')
+                <a class='btn btn-default uploadSelectImage' data-name='{{asset($file)}}'>
+                    Selecionar
+                </a>
+            @else
+                {!! Form::checkbox('images', $file) !!}
+            @endif
         </div>
         
         <div class='col-md-12 text-center margin-top-p'>

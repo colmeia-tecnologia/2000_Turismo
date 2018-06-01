@@ -55,4 +55,9 @@ class BusSale extends Model implements Transformable
      */
     protected $dates = ['created_at', 'deleted_at'];
 
+    public function images()
+    {
+        return $this->hasMany(BusImage::class);
+    }
+
 }

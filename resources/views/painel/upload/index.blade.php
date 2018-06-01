@@ -16,22 +16,41 @@
         </div>
 
         {!! Form::input('hidden', 'image', null, ['id' => 'selectedImage']) !!}
+
+        @if(Route::current()->uri == 'upload/many')
+            <div class='col-md-12 text-center margin-top margin-bottom'>
+                <a href='#' class='selectMany' class='btn btn-default'>
+                    Selecionar Imagens
+                </a>
+            </div>
+        @endif
         
         <div id='fileList'>
             @include('painel.upload._fileList')
         </div>
 
-        <div class='col-md-3 margin-top'>
-            <div class='upload-image'>
-                <img src='{{asset('img/template/painel/sem-imagem.jpg')}}' class='img-responsive'>
-            </div>
 
-            <div class='col-md-12 text-center margin-top-p'>
-                <a class='btn btn-default uploadSelectImage' data-name='{{asset('img/template/painel/sem-imagem.jpg')}}'>
-                    Selecionar
+        @if(Route::current()->uri == 'upload/many')
+            <div class='col-md-12 text-center margin-top-g margin-bottom'>
+                <a href='#' class='selectMany' class='btn btn-default'>
+                    Selecionar Imagens
                 </a>
             </div>
-        </div>
+        @endif
+
+        @if(Route::current()->uri =! 'upload/many')
+            <div class='col-md-3 margin-top'>
+                <div class='upload-image'>
+                    <img src='{{asset('img/template/painel/sem-imagem.jpg')}}' class='img-responsive'>
+                </div>
+
+                <div class='col-md-12 text-center margin-top-p'>
+                    <a class='btn btn-default uploadSelectImage' data-name='{{asset('img/template/painel/sem-imagem.jpg')}}'>
+                        Selecionar
+                    </a>
+                </div>
+            </div>
+        @endif
     </div>
 </div>
 
@@ -46,6 +65,34 @@
         @elseif(Route::current()->uri == 'upload/tinymce')
             $('#uploadModalTinyMce').modal('hide');
         @endif
+    });
+
+    $('.selectMany').click(function (){
+        var images = [];
+
+        $('[name=images]:checked').each(function() {
+          images.push($(this).val());
+        });
+
+        $.ajax
+        ({
+            type: "POST",
+            url: "/upload/many/list",
+            data: 
+            {
+                images: images
+            },
+            success: function(data)
+            {
+                $('#imagesList').html(data);
+            },
+            error: function(data)
+            {   
+                $('body').html(data.responseText);
+            }
+        });
+
+        $('#uploadModal').modal('hide');
     });
 
     $('#deleteImage').click(function(){
