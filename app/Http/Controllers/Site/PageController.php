@@ -22,6 +22,8 @@ class PageController extends Controller
 
         if($title == 'Venda de Peças')
             return redirect()->route('catalogo');
+        if($title == 'Compra/Venda de ônibus')
+            return redirect()->route('venda-onibus');
 
         $page = $this->repository->findWhere(['title' => $title])->first();
 
