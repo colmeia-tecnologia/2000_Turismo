@@ -57,7 +57,7 @@ class BusSale extends Model implements Transformable
 
     public function images()
     {
-        return $this->hasMany(BusImage::class);
+        return $this->hasMany(BusImage::class, 'bus_id');
     }
 
 }

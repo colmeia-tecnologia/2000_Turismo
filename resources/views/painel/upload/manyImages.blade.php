@@ -22,19 +22,22 @@
 
 @for($i=0; $i<count($images); $i++)
     @php
-        $image = env('APP_URL').'/'.$images[$i];
+        if($images[$i] instanceof \App\Models\BusImage)
+            $image = $images[$i]['image'];
+        else
+            $image = env('APP_URL').'/'.$images[$i];
     @endphp
 
     <div class='row margin-top' id='img{{$i}}'>
         <div class='col-md-3'>
             <img src='{{$image}}' class='img-responsive'>
-            {{ Form::hidden("images['image'][]", $image) }}
+            {{ Form::hidden("images[{$i}][image]", $image) }}
         </div>
 
         <div class='col-md-3'>
             <div class='row'>
                 <div class='col-md-11 col-md-ofset-1 input-group'>
-                    {{ Form::input('text', "images['title'][]", null, ['class' => 'form-control']) }}
+                    {{ Form::input('text', "images[{$i}][title]", null, ['class' => 'form-control']) }}
                 </div>
             </div>
         </div>
@@ -42,7 +45,7 @@
         <div class='col-md-3'>
             <div class='row'>
                 <div class='col-md-11 col-md-ofset-1 input-group'>
-                    {{ Form::input('text', "images['description'][]", null, ['class' => 'form-control']) }}
+                    {{ Form::input('text', "images[{$i}][description]", null, ['class' => 'form-control']) }}
                 </div>
             </div>
         </div>
@@ -50,7 +53,7 @@
         <div class='col-md-2'>
             <div class='row'>
                 <div class='col-md-11 col-md-ofset-1 input-group'>
-                    {{ Form::number("images['order'][]", $i+1, ['class' => 'form-control', 'min' => '1']) }}
+                    {{ Form::number("images[{$i}][order]", $i+1, ['class' => 'form-control', 'min' => '1']) }}
                 </div>
             </div>
         </div>

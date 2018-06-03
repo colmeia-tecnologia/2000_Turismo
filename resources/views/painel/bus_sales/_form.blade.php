@@ -49,6 +49,9 @@
 </div>
 
 <div class='row' id='imagesList'>
+    @if(isset($busSale))
+        @include('painel.upload.manyImages', ['images' => $busSale->images])
+    @endif
 </div>
 
 <div class='col-md-12 text-center margin-top'>

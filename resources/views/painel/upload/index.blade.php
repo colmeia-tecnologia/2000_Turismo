@@ -19,7 +19,7 @@
 
         @if(Route::current()->uri == 'upload/many')
             <div class='col-md-12 text-center margin-top margin-bottom'>
-                <a href='#' class='selectMany' class='btn btn-default'>
+                <a href='#' class='selectMany btn btn-default'>
                     Selecionar Imagens
                 </a>
             </div>
@@ -32,7 +32,7 @@
 
         @if(Route::current()->uri == 'upload/many')
             <div class='col-md-12 text-center margin-top-g margin-bottom'>
-                <a href='#' class='selectMany' class='btn btn-default'>
+                <a href='#' class='selectMany btn btn-default'>
                     Selecionar Imagens
                 </a>
             </div>
