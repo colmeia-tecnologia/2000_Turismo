@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionsTableSeeder::class);
         $this->call(PagesTableSeeder::class);
         $this->call(BannersTableSeeder::class);
+        $this->call(BusSalesTableSeeder::class);
 
         if(env('APP_ENV') == 'local') {
             $this->call(ProductsTableSeeder::class);
-            $this->call(BusSalesTableSeeder::class);
         }
     }
 }

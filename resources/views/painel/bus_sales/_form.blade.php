@@ -1,7 +1,7 @@
 <div class='col-md-6'>
     <div class="input-group">
-        <span class="input-group-addon" id="fabricante">Fabricante</span>
-        {!! Form::input('text', 'manufacturer', null, ['class' => 'form-control', 'aria-describedby' => 'fabricante']) !!}
+        <span class="input-group-addon" id="modelo">Modelo</span>
+        {!! Form::input('text', 'model', null, ['class' => 'form-control', 'aria-describedby' => 'modelo']) !!}
     </div>
 </div>
 
@@ -41,10 +41,23 @@
 </div>
 
 <div class='col-md-12 text-center margin-top'>
+    <a data-toggle="modal" href="/upload/many" data-target="#uploadModal" class='btn btn-default'>
+        Imagens
+    </a>
+
+    @include('painel.upload.modal')
+</div>
+
+<div class='row' id='imagesList'>
+    @if(isset($busSale))
+        @include('painel.upload.manyImages', ['images' => $busSale->images])
+    @endif
+</div>
+
+<div class='col-md-12 text-center margin-top'>
     {!! Form::button('<i class="fa fa-check" aria-hidden="true"></i> Salvar&nbsp;', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
 </div>
 
 @section('scripts')
-    {!! Html::script('/js/painel/tinymce/tinymce.min.js') !!}
     {!! Html::script('/js/painel/upload.min.js') !!}
 @endsection

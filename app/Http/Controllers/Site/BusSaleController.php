@@ -18,7 +18,7 @@ class BusSaleController extends Controller
     public function index()
     {
         $buses = $this->repository
-                        ->orderBy('manufacturer')
+                        ->orderBy('model')
                         ->orderBy('bodyModel')
                         ->orderBy('seatings')
                         ->orderBy('year')
@@ -26,5 +26,13 @@ class BusSaleController extends Controller
                         ->all();
 
         return view('site.bus-sale.index', compact('buses'));
+    }
+
+    public function images($id)
+    {
+        $bus = $this->repository->find($id);
+        $images = $bus->images()->orderBy('order')->get();
+
+        return view('site.bus-sale.images', compact('images'));
     }
 }

@@ -15,7 +15,7 @@
 $factory->define(App\Models\BusSale::class, function (Faker\Generator $faker) {
 
     return [
-        'manufacturer' => $faker->words(2, true),
+        'model' => $faker->words(2, true),
         'bodyModel' => $faker->words(3, true),
         'year' => rand(1980, 2018),
         'seatings' => rand(1, 42),

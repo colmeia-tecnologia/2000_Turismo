@@ -17,7 +17,7 @@ class CreateBusSalesTable extends Migration
 	{
 		Schema::create('bus_sales', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('manufacturer'); //Fabricante
+            $table->string('model'); //Modelo
             $table->string('bodyModel'); //Carroceria
             $table->integer('year');
             $table->integer('seatings');

@@ -83,3 +83,10 @@ body {
   background-color: #ef8100 !important;
   border-color: #ef8100 !important;
 }
+
+
+div.carousel-caption
+{
+    bottom: 0px !important;
+    top: 40% !important;
+}

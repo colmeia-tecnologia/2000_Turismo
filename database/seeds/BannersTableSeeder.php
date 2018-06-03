@@ -13,13 +13,13 @@ class BannersTableSeeder extends Seeder
     public function run()
     {
         factory(Banner::class)->create([
-            'image' => 'https://doismilturismo/img/banner-2.jpg',
+            'image' => 'https://2000turismo.com.br/img/banner-2.jpg',
             'title' => '2000 Turismo',
             'description' => '<p>2000 Turismo</p>',
         ]);
 
         factory(Banner::class)->create([
-            'image' => 'https://doismilturismo/img/banner-1.jpg',
+            'image' => 'https://2000turismo.com.br/img/banner-1.jpg',
             'title' => 'Millenium Diesel',
             'description' => '<p>Millenium Diesel</p>',
         ]);

@@ -25,7 +25,7 @@ class BusSale extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        'manufacturer', //Fabricante
+        'model', //Fabricante
         'bodyModel',    //Carroceria
         'year',
         'seatings',
@@ -40,7 +40,7 @@ class BusSale extends Model implements Transformable
      */
     protected static $logAttributes = [
         'id', 
-        'manufacturer', //Fabricante
+        'model', //Fabricante
         'bodyModel',    //Carroceria
         'year',
         'seatings',
@@ -54,5 +54,10 @@ class BusSale extends Model implements Transformable
      * @var array
      */
     protected $dates = ['created_at', 'deleted_at'];
+
+    public function images()
+    {
+        return $this->hasMany(BusImage::class, 'bus_id');
+    }
 
 }

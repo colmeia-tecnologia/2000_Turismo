@@ -16,37 +16,37 @@
         </li>
     @endcan
     {{--PORTFOLIO--}}
-    @can('view-portfolios')
+    {{--@can('view-portfolios')
         <li>
             <a href='{{url('/portfolios')}}' alt='Portifólios' title='Portifólios'>
                 <i class="fa fa-camera" aria-hidden="true"></i> Portifólios
             </a>
         </li>
-    @endcan
+    @endcan--}}
     {{--SERVICES--}}
-    @can('view-services')
+    {{--@can('view-services')
         <li>
             <a href='{{route('services.index')}}' alt='Serviços' title='Serviços'>
                 <i class="fa fa-wrench" aria-hidden="true"></i> Serviços
             </a>
         </li>
-    @endcan
+    @endcan--}}
     {{--CLIENTS--}}
-    @can('view-services')
+    {{--@can('view-services')
         <li>
             <a href='{{route('clients.index')}}' alt='Clientes' title='Clientes'>
                 <i class="fa fa-users" aria-hidden="true"></i> Clientes
             </a>
         </li>
-    @endcan
+    @endcan--}}
     {{--VIDEOS--}}
-    @can('view-videos')
+    {{--@can('view-videos')
         <li>
             <a href='{{route('videos.index')}}' alt='Videos' title='Videos'>
                 <i class="fa fa-video-camera" aria-hidden="true"></i> Videos
             </a>
         </li>
-    @endcan
+    @endcan--}}
     {{--PRODUCT CATEGORY--}}
     @can('view-product-categories')
         <li>
@@ -95,23 +95,23 @@
     </li>
 
     {{--BLOG--}}
-    <li class='menuLabel'>
+    {{--<li class='menuLabel'>
         Blog
-    </li>
+    </li>--}}
     {{--POST_CATEGORIES--}}
-    @can('view-post_categories')
+    {{--@can('view-post_categories')
         <li>
             <a href='{{route('post_categories.index')}}' alt='Categorias Post' title='Categorias Post'>
                 <i class="fa fa-list" aria-hidden="true"></i> Categorias Post
             </a>
         </li>
-    @endcan
+    @endcan--}
     {{--POSTS--}}
-    @can('view-posts')
+    {{--@can('view-posts')
         <li>
             <a href='{{url('/posts')}}' title='Posts' alt='Posts' title='Posts'>
                 <i class="fa fa-file-text"></i> Posts
             </a>
         </li>
-    @endcan
+    @endcan--}}
 </ul>
