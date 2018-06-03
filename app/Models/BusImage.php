@@ -56,5 +56,4 @@ class BusImage extends Model implements Transformable
     {
         return $this->belongsTo(BusSale::class, 'bus_id');
     }
-
 }

@@ -10,7 +10,7 @@
           <table id="myTable">
             <thead>
               <tr class="header">
-                <th>Fabricante</th>
+                <th>Modelo</th>
                 <th>Carroceria</th>
                 <th>Ano</th>
                 <th>Assentos</th>
@@ -20,7 +20,7 @@
             <tbody>
               @foreach ($buses as $bus)
                 <tr>
-                  <td>{{$bus->manufacturer}}</td>
+                  <td>{{$bus->model}}</td>
                   <td>{{$bus->bodyModel}}</td>
                   <td class='text-center'>{{$bus->year}}</td>
                   <td class='text-center'>{{$bus->seatings}}</td>

@@ -1,7 +1,7 @@
 <div class='col-md-6'>
     <div class="input-group">
-        <span class="input-group-addon" id="fabricante">Fabricante</span>
-        {!! Form::input('text', 'manufacturer', null, ['class' => 'form-control', 'aria-describedby' => 'fabricante']) !!}
+        <span class="input-group-addon" id="modelo">Modelo</span>
+        {!! Form::input('text', 'model', null, ['class' => 'form-control', 'aria-describedby' => 'modelo']) !!}
     </div>
 </div>
 
