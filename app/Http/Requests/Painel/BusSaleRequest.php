@@ -24,7 +24,7 @@ class BusSaleRequest extends FormRequest
     public function rules()
     {
         return [
-            'manufacturer' => 'required',
+            'model' => 'required',
             'bodyModel' => 'required',
             'year' => 'required|integer|min:1980',
             'seatings' => 'required|integer|min:1',
@@ -40,7 +40,7 @@ class BusSaleRequest extends FormRequest
     public function messages()
     {
         return [
-            'manufacturer.required' => 'O campo "Fabricante" é obrigatório',
+            'model.required' => 'O campo "Modelo" é obrigatório',
 
             'bodyModel.required' => 'O campo "Carroceria" é obrigatório',
 

@@ -12,14 +12,13 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\BusSale::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\BusImage::class, function (Faker\Generator $faker) {
 
     return [
-        'model' => $faker->words(2, true),
-        'bodyModel' => $faker->words(3, true),
-        'year' => rand(1980, 2018),
-        'seatings' => rand(1, 42),
-        'description' => $faker->text(255),
-        'active' => rand(0,1),
+        'bus_id' => rand(1,10),
+        'image' => $faker->imageUrl(1024, 768, 'transport', true, '', false),
+        'title' => $faker->words(2, true),
+        'description' => $faker->words(10, true),
+        'order' => rand(1,10),
     ];
 });

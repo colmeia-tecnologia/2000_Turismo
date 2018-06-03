@@ -20,7 +20,7 @@
             <tr>
                 <th width="100px">Ações</th>
                 <th width="100px">ID</th>
-                <th>Fabricante</th>
+                <th>Modelo</th>
                 <th>Carroceria</th>
                 <th>Ano</th>
                 <th>Assentos</th>
@@ -44,7 +44,7 @@
                     @endcan
                 </td>
                 <td>{{$bus_sale->id}}</td>
-                <td>{{$bus_sale->manufacturer}}</td>
+                <td>{{$bus_sale->model}}</td>
                 <td>{{$bus_sale->bodyModel}}</td>
                 <td>{{$bus_sale->year}}</td>
                 <td>{{$bus_sale->seatings}}</td>

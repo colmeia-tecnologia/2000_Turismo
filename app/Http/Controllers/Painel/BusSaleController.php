@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Painel;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Painel\BusSaleRequest;
+use App\Models\BusImage;
 use App\Repositories\BusSaleRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -60,7 +61,20 @@ class BusSaleController extends Controller
 
         $data = $request->all();
 
-        $this->repository->create($data);
+        $imgs = $data['images'];
+        $images = array();
+
+        $bus = $this->repository->create($data);
+
+        foreach ($imgs as $img) {
+            $imageModel = new BusImage($img);
+
+            $imageModel->bus()->associate($bus);
+
+            $images[] = $imageModel;
+        }
+
+        $bus->images()->saveMany($images);
 
         //Grava Log
         Activity::all()->last();
@@ -112,7 +126,22 @@ class BusSaleController extends Controller
 
         $data = $request->all();
 
-        $this->repository->update($data, $id);
+        $imgs = $data['images'];
+        $images = array();
+
+        $bus = $this->repository->update($data, $id);
+
+        $bus->images()->delete();
+
+        foreach ($imgs as $img) {
+            $imageModel = new BusImage($img);
+
+            $imageModel->bus()->associate($bus);
+
+            $images[] = $imageModel;
+        }
+
+        $bus->images()->saveMany($images);
 
         //Grava Log
         Activity::all()->last();

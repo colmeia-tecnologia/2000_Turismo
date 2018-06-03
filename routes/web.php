@@ -50,6 +50,8 @@ Route::group([
     //Upload
     Route::get('upload', 'UploadController@index');
     Route::get('/upload/tinymce', 'UploadController@index');
+    Route::get('upload/many', 'UploadController@index');
+    Route::post('/upload/many/list', 'UploadController@manyImages');
     Route::post('upload/upload', 'UploadController@upload')->name('upload.upload');
     Route::get('upload/delete/{file}', 'UploadController@delete')->name('upload.delete');
 
@@ -66,6 +68,7 @@ Route::group([
     Route::get('/empresa', 'BusinessController@index')->name('empresa');
     Route::get('/catalogo', 'CatalogController@index')->name('catalogo');
     Route::get('/venda-onibus', 'BusSaleController@index')->name('venda-onibus');
+    Route::get('/venda-onibus/{id}/imagens', 'BusSaleController@images')->name('onibus-imagens');
     Route::get('/contato', 'ContactController@index')->name('contato');
     Route::post('/contato/enviar', 'ContactController@send')->name('contato.send');
  

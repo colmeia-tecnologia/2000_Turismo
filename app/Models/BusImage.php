@@ -2,21 +2,20 @@
 
 namespace App\Models;
 
+use App\Models\BusSale;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 /**
- * Class BusSale.
+ * Class BusImage.
  *
  * @package namespace App\Models;
  */
-class BusSale extends Model implements Transformable
+class BusImage extends Model implements Transformable
 {
     use TransformableTrait;
-    use SoftDeletes;
     use LogsActivity;
 
     /**
@@ -25,12 +24,11 @@ class BusSale extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
-        'model', //Fabricante
-        'bodyModel',    //Carroceria
-        'year',
-        'seatings',
+        'bus_id',
+        'image',
+        'title',
         'description',
-        'active',
+        'order',
     ];
     
     /*
@@ -40,12 +38,11 @@ class BusSale extends Model implements Transformable
      */
     protected static $logAttributes = [
         'id', 
-        'model', //Fabricante
-        'bodyModel',    //Carroceria
-        'year',
-        'seatings',
+        'bus_id',
+        'image',
+        'title',
         'description',
-        'active',
+        'order',
     ];
 
     /**
@@ -55,9 +52,8 @@ class BusSale extends Model implements Transformable
      */
     protected $dates = ['created_at', 'deleted_at'];
 
-    public function images()
+    public function bus()
     {
-        return $this->hasMany(BusImage::class, 'bus_id');
+        return $this->belongsTo(BusSale::class, 'bus_id');
     }
-
 }
